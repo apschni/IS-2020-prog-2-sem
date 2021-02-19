@@ -9,9 +9,13 @@ Triangle::~Triangle() {
 
 bool Triangle::hasRightAngle() const {
   std::vector<Point *> sides = calculateSides();
-  double a = sqrt(pow(sides[0]->getX(),2) + pow(sides[0]->getY(),2));
-  double b = sqrt(pow(sides[1]->getX(),2) + pow(sides[1]->getY(),2));
-  double c = sqrt(pow(sides[2]->getX(),2) + pow(sides[2]->getY(),2));
-  return ((a * a + b * b == c * c) || (a * a + c * c == b * b) || (c * c + b * b == a * a));
+  for (Point *side1 : sides) {
+    for (Point *side2 : sides) {
+      if (side1->getX() * side2->getX() + side1->getY() * side2->getY() == 0){
+        return true;
+      }
+    }
+  }
+  return false;
 }
 

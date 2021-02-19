@@ -63,10 +63,10 @@ RM = /snap/clion/139/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/artem/CLionProjects/untitled1
+CMAKE_SOURCE_DIR = "/home/artem/Рабочий стол/ITMO/Prog/homework1"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/artem/CLionProjects/untitled1/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled1.dir/depend.make
@@ -79,107 +79,107 @@ include CMakeFiles/untitled1.dir/flags.make
 
 CMakeFiles/untitled1.dir/main.cpp.o: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled1.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/main.cpp.o -c /home/artem/CLionProjects/untitled1/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled1.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/main.cpp.o -c "/home/artem/Рабочий стол/ITMO/Prog/homework1/main.cpp"
 
 CMakeFiles/untitled1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artem/CLionProjects/untitled1/main.cpp > CMakeFiles/untitled1.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/artem/Рабочий стол/ITMO/Prog/homework1/main.cpp" > CMakeFiles/untitled1.dir/main.cpp.i
 
 CMakeFiles/untitled1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artem/CLionProjects/untitled1/main.cpp -o CMakeFiles/untitled1.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/artem/Рабочий стол/ITMO/Prog/homework1/main.cpp" -o CMakeFiles/untitled1.dir/main.cpp.s
 
 CMakeFiles/untitled1.dir/Point.cpp.o: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/Point.cpp.o: ../Point.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled1.dir/Point.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Point.cpp.o -c /home/artem/CLionProjects/untitled1/Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled1.dir/Point.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Point.cpp.o -c "/home/artem/Рабочий стол/ITMO/Prog/homework1/Point.cpp"
 
 CMakeFiles/untitled1.dir/Point.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/Point.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artem/CLionProjects/untitled1/Point.cpp > CMakeFiles/untitled1.dir/Point.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/artem/Рабочий стол/ITMO/Prog/homework1/Point.cpp" > CMakeFiles/untitled1.dir/Point.cpp.i
 
 CMakeFiles/untitled1.dir/Point.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/Point.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artem/CLionProjects/untitled1/Point.cpp -o CMakeFiles/untitled1.dir/Point.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/artem/Рабочий стол/ITMO/Prog/homework1/Point.cpp" -o CMakeFiles/untitled1.dir/Point.cpp.s
 
 CMakeFiles/untitled1.dir/PolygonalChain.cpp.o: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/PolygonalChain.cpp.o: ../PolygonalChain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled1.dir/PolygonalChain.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/PolygonalChain.cpp.o -c /home/artem/CLionProjects/untitled1/PolygonalChain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled1.dir/PolygonalChain.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/PolygonalChain.cpp.o -c "/home/artem/Рабочий стол/ITMO/Prog/homework1/PolygonalChain.cpp"
 
 CMakeFiles/untitled1.dir/PolygonalChain.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/PolygonalChain.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artem/CLionProjects/untitled1/PolygonalChain.cpp > CMakeFiles/untitled1.dir/PolygonalChain.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/artem/Рабочий стол/ITMO/Prog/homework1/PolygonalChain.cpp" > CMakeFiles/untitled1.dir/PolygonalChain.cpp.i
 
 CMakeFiles/untitled1.dir/PolygonalChain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/PolygonalChain.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artem/CLionProjects/untitled1/PolygonalChain.cpp -o CMakeFiles/untitled1.dir/PolygonalChain.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/artem/Рабочий стол/ITMO/Prog/homework1/PolygonalChain.cpp" -o CMakeFiles/untitled1.dir/PolygonalChain.cpp.s
 
 CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.o: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.o: ../ClosedPolygonalChain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.o -c /home/artem/CLionProjects/untitled1/ClosedPolygonalChain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.o -c "/home/artem/Рабочий стол/ITMO/Prog/homework1/ClosedPolygonalChain.cpp"
 
 CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artem/CLionProjects/untitled1/ClosedPolygonalChain.cpp > CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/artem/Рабочий стол/ITMO/Prog/homework1/ClosedPolygonalChain.cpp" > CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.i
 
 CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artem/CLionProjects/untitled1/ClosedPolygonalChain.cpp -o CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/artem/Рабочий стол/ITMO/Prog/homework1/ClosedPolygonalChain.cpp" -o CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.s
 
 CMakeFiles/untitled1.dir/Polygon.cpp.o: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/Polygon.cpp.o: ../Polygon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled1.dir/Polygon.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Polygon.cpp.o -c /home/artem/CLionProjects/untitled1/Polygon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled1.dir/Polygon.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Polygon.cpp.o -c "/home/artem/Рабочий стол/ITMO/Prog/homework1/Polygon.cpp"
 
 CMakeFiles/untitled1.dir/Polygon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/Polygon.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artem/CLionProjects/untitled1/Polygon.cpp > CMakeFiles/untitled1.dir/Polygon.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/artem/Рабочий стол/ITMO/Prog/homework1/Polygon.cpp" > CMakeFiles/untitled1.dir/Polygon.cpp.i
 
 CMakeFiles/untitled1.dir/Polygon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/Polygon.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artem/CLionProjects/untitled1/Polygon.cpp -o CMakeFiles/untitled1.dir/Polygon.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/artem/Рабочий стол/ITMO/Prog/homework1/Polygon.cpp" -o CMakeFiles/untitled1.dir/Polygon.cpp.s
 
 CMakeFiles/untitled1.dir/Trapezoid.cpp.o: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/Trapezoid.cpp.o: ../Trapezoid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled1.dir/Trapezoid.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Trapezoid.cpp.o -c /home/artem/CLionProjects/untitled1/Trapezoid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/untitled1.dir/Trapezoid.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Trapezoid.cpp.o -c "/home/artem/Рабочий стол/ITMO/Prog/homework1/Trapezoid.cpp"
 
 CMakeFiles/untitled1.dir/Trapezoid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/Trapezoid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artem/CLionProjects/untitled1/Trapezoid.cpp > CMakeFiles/untitled1.dir/Trapezoid.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/artem/Рабочий стол/ITMO/Prog/homework1/Trapezoid.cpp" > CMakeFiles/untitled1.dir/Trapezoid.cpp.i
 
 CMakeFiles/untitled1.dir/Trapezoid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/Trapezoid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artem/CLionProjects/untitled1/Trapezoid.cpp -o CMakeFiles/untitled1.dir/Trapezoid.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/artem/Рабочий стол/ITMO/Prog/homework1/Trapezoid.cpp" -o CMakeFiles/untitled1.dir/Trapezoid.cpp.s
 
 CMakeFiles/untitled1.dir/Triangle.cpp.o: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/Triangle.cpp.o: ../Triangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled1.dir/Triangle.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Triangle.cpp.o -c /home/artem/CLionProjects/untitled1/Triangle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/untitled1.dir/Triangle.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/Triangle.cpp.o -c "/home/artem/Рабочий стол/ITMO/Prog/homework1/Triangle.cpp"
 
 CMakeFiles/untitled1.dir/Triangle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/Triangle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artem/CLionProjects/untitled1/Triangle.cpp > CMakeFiles/untitled1.dir/Triangle.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/artem/Рабочий стол/ITMO/Prog/homework1/Triangle.cpp" > CMakeFiles/untitled1.dir/Triangle.cpp.i
 
 CMakeFiles/untitled1.dir/Triangle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/Triangle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artem/CLionProjects/untitled1/Triangle.cpp -o CMakeFiles/untitled1.dir/Triangle.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/artem/Рабочий стол/ITMO/Prog/homework1/Triangle.cpp" -o CMakeFiles/untitled1.dir/Triangle.cpp.s
 
 CMakeFiles/untitled1.dir/RegularPolygon.cpp.o: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/RegularPolygon.cpp.o: ../RegularPolygon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/untitled1.dir/RegularPolygon.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/RegularPolygon.cpp.o -c /home/artem/CLionProjects/untitled1/RegularPolygon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/untitled1.dir/RegularPolygon.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled1.dir/RegularPolygon.cpp.o -c "/home/artem/Рабочий стол/ITMO/Prog/homework1/RegularPolygon.cpp"
 
 CMakeFiles/untitled1.dir/RegularPolygon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled1.dir/RegularPolygon.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artem/CLionProjects/untitled1/RegularPolygon.cpp > CMakeFiles/untitled1.dir/RegularPolygon.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/artem/Рабочий стол/ITMO/Prog/homework1/RegularPolygon.cpp" > CMakeFiles/untitled1.dir/RegularPolygon.cpp.i
 
 CMakeFiles/untitled1.dir/RegularPolygon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled1.dir/RegularPolygon.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artem/CLionProjects/untitled1/RegularPolygon.cpp -o CMakeFiles/untitled1.dir/RegularPolygon.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/artem/Рабочий стол/ITMO/Prog/homework1/RegularPolygon.cpp" -o CMakeFiles/untitled1.dir/RegularPolygon.cpp.s
 
 # Object files for target untitled1
 untitled1_OBJECTS = \
@@ -205,7 +205,7 @@ untitled1: CMakeFiles/untitled1.dir/Triangle.cpp.o
 untitled1: CMakeFiles/untitled1.dir/RegularPolygon.cpp.o
 untitled1: CMakeFiles/untitled1.dir/build.make
 untitled1: CMakeFiles/untitled1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable untitled1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable untitled1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -218,6 +218,6 @@ CMakeFiles/untitled1.dir/clean:
 .PHONY : CMakeFiles/untitled1.dir/clean
 
 CMakeFiles/untitled1.dir/depend:
-	cd /home/artem/CLionProjects/untitled1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/artem/CLionProjects/untitled1 /home/artem/CLionProjects/untitled1 /home/artem/CLionProjects/untitled1/cmake-build-debug /home/artem/CLionProjects/untitled1/cmake-build-debug /home/artem/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/artem/Рабочий стол/ITMO/Prog/homework1" "/home/artem/Рабочий стол/ITMO/Prog/homework1" "/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug" "/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug" "/home/artem/Рабочий стол/ITMO/Prog/homework1/cmake-build-debug/CMakeFiles/untitled1.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/untitled1.dir/depend
 
