@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/untitled1.dir/main.cpp.o CMakeFiles/untitled1.dir/Point.cpp.o CMakeFiles/untitled1.dir/PolygonalChain.cpp.o CMakeFiles/untitled1.dir/ClosedPolygonalChain.cpp.o CMakeFiles/untitled1.dir/Polygon.cpp.o CMakeFiles/untitled1.dir/Trapezoid.cpp.o CMakeFiles/untitled1.dir/Triangle.cpp.o CMakeFiles/untitled1.dir/RegularPolygon.cpp.o  -o untitled1 
