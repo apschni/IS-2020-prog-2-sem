@@ -11,6 +11,7 @@ PolygonalChain::PolygonalChain(int n, Point *a) {
   this -> n = n;
 }
 PolygonalChain::PolygonalChain(const PolygonalChain &other) : n(other.n), points(other.points) {}
+//u should do smth
 PolygonalChain::~PolygonalChain() {
 }
 

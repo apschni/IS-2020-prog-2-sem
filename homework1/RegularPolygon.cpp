@@ -10,7 +10,8 @@ RegularPolygon::~RegularPolygon() {
 }
 
 double RegularPolygon::perimeter() const {
-    std::vector<Point*> sides = calculateSides();
+    std::vector<Point*> sides = calculateSides();    
+    //all of em?
     double sidelenght = sqrt(sides[0]->getX() * sides[0]->getX()
             + sides[0]->getY() * sides[0]->getY());
     return n * sidelenght;

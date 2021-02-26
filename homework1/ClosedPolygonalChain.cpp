@@ -11,6 +11,7 @@ ClosedPolygonalChain::~ClosedPolygonalChain() {
 
 
 std::vector<Point *> ClosedPolygonalChain::calculateSides() const {
+  //copy-paste
   std::vector<Point *> sides;
   sides.reserve(n - 1);
   for (int i = 0; i < n - 1; ++i) {
@@ -32,4 +33,3 @@ double ClosedPolygonalChain::area() const {
   area += points[n - 1].getX() * points[0].getY() - points[n - 1].getY() * points[0].getX();
   return std::abs(area)/2;
 }
-
