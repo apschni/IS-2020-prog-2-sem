@@ -29,7 +29,7 @@ class PolygonalChain {
   PolygonalChain &operator=(const PolygonalChain &);
   virtual ~PolygonalChain();
 
-  double perimeter() const;
+  virtual double perimeter() const;
   long getN() const;
   Point getPoint(int i) const;
  protected:
@@ -74,5 +74,7 @@ class RegularPolygon : public Polygon{
   RegularPolygon(int i, Point *point);
   RegularPolygon(const Polygon &polygon);
   virtual ~RegularPolygon();
+  virtual double perimeter() const override;
+  virtual double area() const override;
 };
 #endif
