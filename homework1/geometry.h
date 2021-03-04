@@ -76,5 +76,8 @@ class RegularPolygon : public Polygon{
   virtual ~RegularPolygon();
   virtual double perimeter() const override;
   virtual double area() const override;
+
+private:
+    Point * calculateOneSide() const;
 };
 #endif
