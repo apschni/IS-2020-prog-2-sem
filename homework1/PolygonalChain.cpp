@@ -1,6 +1,6 @@
 #include "geometry.h"
 #include <cmath>
-
+#include <vector>
 
 PolygonalChain::PolygonalChain(int n, Point *a) {
   Point *copiedArray = new Point[n];
@@ -11,18 +11,11 @@ PolygonalChain::PolygonalChain(int n, Point *a) {
   this -> n = n;
 }
 PolygonalChain::PolygonalChain(const PolygonalChain &other) : n(other.n), points(other.points) {}
-//u should do smth
-PolygonalChain::~PolygonalChain() {
-}
+//u should do smth - what can i do there??
+PolygonalChain::~PolygonalChain() = default;
 
-PolygonalChain &PolygonalChain::operator=(const PolygonalChain &other) {
-  if (this == &other) {
-    return *this;
-  }
-  points = other.points;
-  n = other.n;
-  return *this;
-}
+PolygonalChain &PolygonalChain::operator=(const PolygonalChain &other) = default;
+
 
 std::vector<Point *> PolygonalChain::calculateSides() const {
   std::vector<Point *> sides;

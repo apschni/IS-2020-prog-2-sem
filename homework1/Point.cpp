@@ -3,9 +3,7 @@
 Point::Point(const double x, const double y) : x(x), y(y) {}
 Point::Point() : x(0.0), y(0.0) {}
 Point::Point(const Point &other) : x(other.x), y(other.y) {}
-Point::~Point() {
-
-}
+Point::~Point() = default;
 
 Point &Point::operator=(const Point &rhs) {
   if (this == &rhs) {

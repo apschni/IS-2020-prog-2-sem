@@ -1,11 +1,9 @@
 #include "geometry.h"
-#include <cmath>
 
 Triangle::Triangle(int i, Point *point) : Polygon(i, point) {}
 Triangle::Triangle(const Polygon &polygon) : Polygon(polygon) {}
-Triangle::~Triangle() {
-
-}
+Triangle & Triangle::operator=(const Triangle &triangle) = default;
+Triangle::~Triangle() = default;
 
 bool Triangle::hasRightAngle() const {
   std::vector<Point *> sides = calculateSides();

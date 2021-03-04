@@ -5,9 +5,9 @@ RegularPolygon::RegularPolygon(int i, Point *point) : Polygon(i, point) {}
 
 RegularPolygon::RegularPolygon(const Polygon &polygon) : Polygon(polygon) {}
 
-RegularPolygon::~RegularPolygon() {
+RegularPolygon & RegularPolygon::operator=(const RegularPolygon &) = default;
 
-}
+RegularPolygon::~RegularPolygon() = default;
 
 Point * RegularPolygon::calculateOneSide() const {
     return new Point(points[1].getX() - points[0].getX(),

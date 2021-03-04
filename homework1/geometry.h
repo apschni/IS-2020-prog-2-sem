@@ -8,7 +8,7 @@ class Point {
   double y;
 
  public:
-  Point(const double, const double);
+  Point(double, double);
   Point();
   Point(const Point &);
   virtual ~Point();
@@ -39,6 +39,7 @@ class PolygonalChain {
 class ClosedPolygonalChain : public PolygonalChain {
  public:
   ClosedPolygonalChain(int, Point *);
+  ClosedPolygonalChain &operator=(const ClosedPolygonalChain &);
   virtual ~ClosedPolygonalChain();
   ClosedPolygonalChain(const ClosedPolygonalChain &);
   virtual double area() const;
@@ -50,21 +51,25 @@ class Polygon : public ClosedPolygonalChain {
  public:
   Polygon(int, Point *);
   Polygon(const Polygon &);
+  Polygon &operator=(const Polygon &);
   virtual ~Polygon();
 };
 
 class Triangle : public Polygon{
  public:
-  Triangle(int i, Point *point);
-  Triangle(const Polygon &polygon);
+  Triangle(int i, Point *);
+  Triangle(const Polygon &);
+  Triangle &operator=(const Triangle &);
   virtual ~Triangle();
   bool hasRightAngle() const;
 };
+
 
 class Trapezoid : public Polygon {
  public:
   Trapezoid(int, Point *);
   Trapezoid(const Trapezoid &);
+  Trapezoid & operator=(const Trapezoid &);
   virtual ~Trapezoid();
   double height() const;
 };
@@ -73,9 +78,10 @@ class RegularPolygon : public Polygon{
  public:
   RegularPolygon(int i, Point *point);
   RegularPolygon(const Polygon &polygon);
+  RegularPolygon & operator=(const RegularPolygon &);
   virtual ~RegularPolygon();
-  virtual double perimeter() const override;
-  virtual double area() const override;
+  double perimeter() const override;
+  double area() const override;
 
 private:
     Point * calculateOneSide() const;
