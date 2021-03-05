@@ -14,8 +14,8 @@ PolygonalChain::PolygonalChain(const PolygonalChain &other) : n(other.n), points
 //u should do smth - what can i do there??
 PolygonalChain::~PolygonalChain() = default;
 
+//todo not default
 PolygonalChain &PolygonalChain::operator=(const PolygonalChain &other) = default;
-
 
 std::vector<Point *> PolygonalChain::calculateSides() const {
   std::vector<Point *> sides;
@@ -37,6 +37,7 @@ double PolygonalChain::perimeter() const {
   return perimeter;
 }
 
+//todo there is no type long
 long PolygonalChain::getN() const {
   return n;
 }
