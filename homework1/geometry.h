@@ -21,7 +21,7 @@ class Point {
 
 class PolygonalChain {
  protected:
-  int n;
+  unsigned n;
   Point *points;
  public:
   PolygonalChain(int n, Point *);
@@ -30,7 +30,7 @@ class PolygonalChain {
   virtual ~PolygonalChain();
 
   virtual double perimeter() const;
-  long getN() const;
+  unsigned getN() const;
   Point getPoint(int i) const;
  protected:
   virtual std::vector<Point *> calculateSides() const;

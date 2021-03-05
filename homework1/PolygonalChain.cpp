@@ -37,8 +37,8 @@ double PolygonalChain::perimeter() const {
   return perimeter;
 }
 
-//todo there is no type long
-long PolygonalChain::getN() const {
+//fixed there is no type long
+unsigned PolygonalChain::getN() const {
   return n;
 }
 
