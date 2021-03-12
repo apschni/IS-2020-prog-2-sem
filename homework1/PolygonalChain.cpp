@@ -14,7 +14,7 @@ PolygonalChain::PolygonalChain(const PolygonalChain &other) : n(other.n), points
 //u should do smth - what can i do there??
 PolygonalChain::~PolygonalChain() = default;
 
-//todo not default
+//fixed not default
 PolygonalChain &PolygonalChain::operator=(const PolygonalChain &other){
     if (&other == this) return *this;
     n = other.n;
