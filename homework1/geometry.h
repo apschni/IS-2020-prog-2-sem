@@ -39,9 +39,10 @@ class PolygonalChain {
 class ClosedPolygonalChain : public PolygonalChain {
  public:
   ClosedPolygonalChain(int, Point *);
-  ClosedPolygonalChain &operator=(const ClosedPolygonalChain &);
   virtual ~ClosedPolygonalChain();
   ClosedPolygonalChain(const ClosedPolygonalChain &);
+  using PolygonalChain::operator=;
+
   virtual double area() const;
  protected:
   std::vector<Point *> calculateSides() const override;
@@ -51,7 +52,7 @@ class Polygon : public ClosedPolygonalChain {
  public:
   Polygon(int, Point *);
   Polygon(const Polygon &);
-  Polygon &operator=(const Polygon &);
+  using PolygonalChain::operator=;
   virtual ~Polygon();
 };
 
@@ -59,7 +60,7 @@ class Triangle : public Polygon{
  public:
   Triangle(int i, Point *);
   Triangle(const Polygon &);
-  Triangle &operator=(const Triangle &);
+  using PolygonalChain::operator=;
   virtual ~Triangle();
   bool hasRightAngle() const;
 };
@@ -69,7 +70,7 @@ class Trapezoid : public Polygon {
  public:
   Trapezoid(int, Point *);
   Trapezoid(const Trapezoid &);
-  Trapezoid & operator=(const Trapezoid &);
+  using PolygonalChain::operator=;
   virtual ~Trapezoid();
   double height() const;
 };
@@ -78,7 +79,7 @@ class RegularPolygon : public Polygon{
  public:
   RegularPolygon(int i, Point *point);
   RegularPolygon(const Polygon &polygon);
-  RegularPolygon & operator=(const RegularPolygon &);
+  using PolygonalChain::operator=;
   virtual ~RegularPolygon();
   double perimeter() const override;
   double area() const override;

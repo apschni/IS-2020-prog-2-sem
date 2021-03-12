@@ -15,7 +15,13 @@ PolygonalChain::PolygonalChain(const PolygonalChain &other) : n(other.n), points
 PolygonalChain::~PolygonalChain() = default;
 
 //todo not default
-PolygonalChain &PolygonalChain::operator=(const PolygonalChain &other) = default;
+PolygonalChain &PolygonalChain::operator=(const PolygonalChain &other){
+    if (&other == this) return *this;
+    n = other.n;
+    delete[] points;
+    points = other.points;
+    return *this;
+}
 
 std::vector<Point *> PolygonalChain::calculateSides() const {
   std::vector<Point *> sides;

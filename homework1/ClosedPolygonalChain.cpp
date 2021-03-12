@@ -4,7 +4,6 @@
 ClosedPolygonalChain::ClosedPolygonalChain(int n, Point *a) : PolygonalChain(n, a) {}
 ClosedPolygonalChain::ClosedPolygonalChain(const ClosedPolygonalChain &other)
   : PolygonalChain(other) {}
-ClosedPolygonalChain & ClosedPolygonalChain::operator=(const ClosedPolygonalChain &) = default;
 ClosedPolygonalChain::~ClosedPolygonalChain() = default;
 
 

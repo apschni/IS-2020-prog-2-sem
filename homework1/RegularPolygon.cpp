@@ -5,7 +5,6 @@ RegularPolygon::RegularPolygon(int i, Point *point) : Polygon(i, point) {}
 
 RegularPolygon::RegularPolygon(const Polygon &polygon) : Polygon(polygon) {}
 
-RegularPolygon & RegularPolygon::operator=(const RegularPolygon &) = default;
 
 RegularPolygon::~RegularPolygon() = default;
 

@@ -4,7 +4,6 @@
 
 Trapezoid::Trapezoid(int n, Point *a) : Polygon(n, a) {}
 Trapezoid::Trapezoid(const Trapezoid &other) : Polygon(other) {}
-Trapezoid & Trapezoid::operator=(const Trapezoid &) = default;
 Trapezoid::~Trapezoid() = default;
 
 double Trapezoid::height() const {
