@@ -11,10 +11,9 @@ PolygonalChain::PolygonalChain(int n, Point *a) {
   this -> n = n;
 }
 PolygonalChain::PolygonalChain(const PolygonalChain &other) : n(other.n), points(other.points) {}
-//u should do smth - what can i do there??
+//todo calculateSides has many Point*, u should delete it
 PolygonalChain::~PolygonalChain() = default;
 
-//fixed not default
 PolygonalChain &PolygonalChain::operator=(const PolygonalChain &other){
     if (&other == this) return *this;
     n = other.n;
@@ -43,7 +42,6 @@ double PolygonalChain::perimeter() const {
   return perimeter;
 }
 
-//fixed there is no type long
 unsigned PolygonalChain::getN() const {
   return n;
 }

@@ -3,7 +3,7 @@
 Triangle::Triangle(int i, Point *point) : Polygon(i, point) {}
 Triangle::Triangle(const Polygon &polygon) : Polygon(polygon) {}
 Triangle::~Triangle() = default;
-
+//todo operator= has all classes
 bool Triangle::hasRightAngle() const {
   std::vector<Point *> sides = calculateSides();
   for (Point *side1 : sides) {
