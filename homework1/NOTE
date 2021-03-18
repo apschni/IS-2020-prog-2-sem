@@ -1,0 +1,45 @@
+Pulling https://github.com/apschni/IS-2020-prog-2-sem/homework1
+Pull finished
+It's compiled
+It's OK
+ClosedPolygonalChain.cpp: In member function 'virtual double ClosedPolygonalChain::area() const':
+ClosedPolygonalChain.cpp:20:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   20 |   for (int i = 0; i < n - 1; ++i) {
+      |                   ~~^~~~~~~
+PolygonalChain.cpp: In member function 'virtual std::vector<Point*> PolygonalChain::calculateSides() const':
+PolygonalChain.cpp:29:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   29 |   for (int i = 0; i < n - 1; ++i) {
+      |                   ~~^~~~~~~
+main.cpp: In function 'void PolygonsCheck()':
+main.cpp:43:11: warning: implicitly-declared 'Trapezoid& Trapezoid::operator=(const Trapezoid&)' is deprecated [-Wdeprecated-copy]
+   43 |     tra = tr;
+      |           ^~
+In file included from main.cpp:1:
+geometry.h:72:3: note: because 'Trapezoid' has user-provided 'Trapezoid::Trapezoid(const Trapezoid&)'
+   72 |   Trapezoid(const Trapezoid &);
+      |   ^~~~~~~~~
+geometry.h: In member function 'Trapezoid& Trapezoid::operator=(const Trapezoid&)':
+geometry.h:69:7: warning: implicitly-declared 'Polygon& Polygon::operator=(const Polygon&)' is deprecated [-Wdeprecated-copy]
+   69 | class Trapezoid : public Polygon {
+      |       ^~~~~~~~~
+geometry.h:54:3: note: because 'Polygon' has user-provided 'Polygon::Polygon(const Polygon&)'
+   54 |   Polygon(const Polygon &);
+      |   ^~~~~~~
+geometry.h: In member function 'Polygon& Polygon::operator=(const Polygon&)':
+geometry.h:51:7: warning: implicitly-declared 'ClosedPolygonalChain& ClosedPolygonalChain::operator=(const ClosedPolygonalChain&)' is deprecated [-Wdeprecated-copy]
+   51 | class Polygon : public ClosedPolygonalChain {
+      |       ^~~~~~~
+geometry.h:43:3: note: because 'ClosedPolygonalChain' has user-provided 'ClosedPolygonalChain::ClosedPolygonalChain(const ClosedPolygonalChain&)'
+   43 |   ClosedPolygonalChain(const ClosedPolygonalChain &);
+      |   ^~~~~~~~~~~~~~~~~~~~
+geometry.h: In member function 'Trapezoid& Trapezoid::operator=(const Trapezoid&)':
+geometry.h:69:7: note: synthesized method 'Polygon& Polygon::operator=(const Polygon&)' first required here
+   69 | class Trapezoid : public Polygon {
+      |       ^~~~~~~~~
+main.cpp: In function 'void PolygonsCheck()':
+main.cpp:43:11: note: synthesized method 'Trapezoid& Trapezoid::operator=(const Trapezoid&)' first required here
+   43 |     tra = tr;
+      |           ^~
+
+
+
