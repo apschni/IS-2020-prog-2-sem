@@ -17,7 +17,7 @@ std::vector<Point *> ClosedPolygonalChain::calculateSides() const {
 
 double ClosedPolygonalChain::area() const {
   double area = 0;
-  for (int i = 0; i < n - 1; ++i) {
+  for (unsigned i = 0; i < n - 1; ++i) {
     area += ((((points + i)->getX()) * (points + i + 1)->getY())
           - (((points + i + 1)->getX()) * (points + i)->getY()));
   }
