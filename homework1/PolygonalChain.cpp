@@ -11,16 +11,9 @@ PolygonalChain::PolygonalChain(int n, Point *a) {
   this -> n = n;
 }
 PolygonalChain::PolygonalChain(const PolygonalChain &other) : n(other.n), points(other.points) {}
-//todo calculateSides has many Point*, u should delete it
+//fixed calculateSides has many Point*, u should delete it
 PolygonalChain::~PolygonalChain() = default;
 
-PolygonalChain &PolygonalChain::operator=(const PolygonalChain &other){
-    if (&other == this) return *this;
-    n = other.n;
-    delete[] points;
-    points = other.points;
-    return *this;
-}
 
 std::vector<Point *> PolygonalChain::calculateSides() const {
   std::vector<Point *> sides;
@@ -39,6 +32,7 @@ double PolygonalChain::perimeter() const {
   for (Point *side : sides) {
     perimeter += sqrt(pow(side->getX(), 2) + pow(side->getY(), 2));
   }
+  sides.clear();
   return perimeter;
 }
 

@@ -26,7 +26,7 @@ class PolygonalChain {
  public:
   PolygonalChain(int n, Point *);
   PolygonalChain(const PolygonalChain &);
-  PolygonalChain &operator=(const PolygonalChain &);
+  PolygonalChain &operator=(const PolygonalChain &) = default;
   virtual ~PolygonalChain();
 
   virtual double perimeter() const;
@@ -41,7 +41,7 @@ class ClosedPolygonalChain : public PolygonalChain {
   ClosedPolygonalChain(int, Point *);
   virtual ~ClosedPolygonalChain();
   ClosedPolygonalChain(const ClosedPolygonalChain &);
-  using PolygonalChain::operator=;
+  ClosedPolygonalChain &operator=(const ClosedPolygonalChain &) = default;
 
   virtual double area() const;
  protected:
@@ -52,7 +52,7 @@ class Polygon : public ClosedPolygonalChain {
  public:
   Polygon(int, Point *);
   Polygon(const Polygon &);
-  using PolygonalChain::operator=;
+  Polygon &operator=(const Polygon &) = default;;
   virtual ~Polygon();
 };
 
@@ -60,7 +60,7 @@ class Triangle : public Polygon{
  public:
   Triangle(int i, Point *);
   Triangle(const Polygon &);
-  using PolygonalChain::operator=;
+  Triangle &operator=(const Triangle &) = default;
   virtual ~Triangle();
   bool hasRightAngle() const;
 };
@@ -70,7 +70,7 @@ class Trapezoid : public Polygon {
  public:
   Trapezoid(int, Point *);
   Trapezoid(const Trapezoid &);
-  using PolygonalChain::operator=;
+  Trapezoid &operator=(const Trapezoid &) = default;
   virtual ~Trapezoid();
   double height() const;
 };
@@ -79,7 +79,7 @@ class RegularPolygon : public Polygon{
  public:
   RegularPolygon(int i, Point *point);
   RegularPolygon(const Polygon &polygon);
-  using PolygonalChain::operator=;
+  RegularPolygon &operator=(const RegularPolygon &) = default;
   virtual ~RegularPolygon();
   double perimeter() const override;
   double area() const override;
