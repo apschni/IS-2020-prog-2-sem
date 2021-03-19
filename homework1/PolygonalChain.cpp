@@ -18,6 +18,7 @@ PolygonalChain::~PolygonalChain() = default;
 
 
 std::vector<Point *> PolygonalChain::calculateSides() const {
+    //todo Point* -> Point
     std::vector<Point *> sides;
     sides.reserve(n - 1);
     for (unsigned i = 0; i < n - 1; ++i) {
