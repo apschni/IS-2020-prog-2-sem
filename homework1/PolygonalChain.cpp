@@ -17,23 +17,24 @@ PolygonalChain::PolygonalChain(const PolygonalChain &other) : n(other.n), points
 PolygonalChain::~PolygonalChain() = default;
 
 
-std::vector<Point *> PolygonalChain::calculateSides() const {
-    //todo Point* -> Point
-    std::vector<Point *> sides;
+std::vector<Point> PolygonalChain::calculateSides() const {
+    //fixed Point* -> Point
+    std::vector<Point> sides;
     sides.reserve(n - 1);
     for (unsigned i = 0; i < n - 1; ++i) {
-        sides.push_back(new Point(points[i + 1].getX() - points[i].getX(),
-                                  points[i + 1].getY() - points[i].getY()));
+        Point tmp = Point(points[i + 1].getX() - points[i].getX(),
+                          points[i + 1].getY() - points[i].getY());
+        sides.push_back(tmp);
     }
     return sides;
 }
 
 double PolygonalChain::perimeter() const {
     double perimeter = 0;
-    std::vector<Point *> sides = this->calculateSides();
+    std::vector<Point> sides = this->calculateSides();
 
-    for (Point *side : sides) {
-        perimeter += sqrt(pow(side->getX(), 2) + pow(side->getY(), 2));
+    for (const Point& side : sides) {
+        perimeter += sqrt(pow(side.getX(), 2) + pow(side.getY(), 2));
     }
     sides.clear();
     return perimeter;

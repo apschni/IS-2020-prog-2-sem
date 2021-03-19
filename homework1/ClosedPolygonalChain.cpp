@@ -7,10 +7,10 @@ ClosedPolygonalChain::ClosedPolygonalChain(const ClosedPolygonalChain &other)
 ClosedPolygonalChain::~ClosedPolygonalChain() = default;
 
 
-std::vector<Point *> ClosedPolygonalChain::calculateSides() const {
+std::vector<Point> ClosedPolygonalChain::calculateSides() const {
   //copy-paste - fixed
-  std::vector<Point *> sides = PolygonalChain::calculateSides(); //fixed copy-paste
-  sides.push_back(new Point(points[0].getX() - points[n - 1].getX(),
+  std::vector<Point> sides = PolygonalChain::calculateSides(); //fixed copy-paste
+  sides.push_back(Point(points[0].getX() - points[n - 1].getX(),
                             points[0].getY() - points[n - 1].getY()));
   return sides;
 }

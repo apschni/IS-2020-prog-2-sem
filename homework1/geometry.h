@@ -33,7 +33,7 @@ class PolygonalChain {
   unsigned getN() const;
   Point getPoint(int i) const;
  protected:
-  virtual std::vector<Point *> calculateSides() const;
+  virtual std::vector<Point> calculateSides() const;
 };
 
 class ClosedPolygonalChain : public PolygonalChain {
@@ -45,7 +45,7 @@ class ClosedPolygonalChain : public PolygonalChain {
 
   virtual double area() const;
  protected:
-  std::vector<Point *> calculateSides() const override;
+  std::vector<Point> calculateSides() const override;
 };
 
 class Polygon : public ClosedPolygonalChain {
@@ -85,6 +85,6 @@ class RegularPolygon : public Polygon{
   double area() const override;
 
 private:
-    Point * calculateOneSide() const;
+    Point calculateOneSide() const;
 };
 #endif
