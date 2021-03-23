@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework1/PolygonalChain.cpp
+geometry.h
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework1/geometry.h
+cmath
+-
+vector
+-
+
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework1/geometry.h
+vector
+-
+

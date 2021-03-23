@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/homework2.dir/main.cpp.o CMakeFiles/homework2.dir/Polynomial.cpp.o  -o homework2 
