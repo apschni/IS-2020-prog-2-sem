@@ -6,10 +6,10 @@
 
 class Polynomial {
 public:
-    int minpower = 0;
-    int maxpower = 0;
-    int n = abs(maxpower - minpower) + 1;
-    int *coef = new int[n];
+    int minpower;
+    int maxpower;
+    int n;
+    int *coef;
 public:
     Polynomial(int, int, int *);
 
@@ -31,7 +31,7 @@ public:
     friend Polynomial operator*(int, const Polynomial &);
     friend Polynomial operator*(const Polynomial &, int);
     Polynomial operator/(int) const;
-    void Format(Polynomial &);
+    void normalize();
     int operator[](int) const;
     int & operator[](int);
 

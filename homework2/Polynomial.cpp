@@ -54,12 +54,12 @@ Polynomial Polynomial::operator+=(const Polynomial &rhs) const{
     return *this + rhs;
 }
 
-std::ostream &operator<<(std::ostream &os, const Polynomial &polynomial) {
+std::ostream &operator<<(std::ostream &os, const Polynomial &polynomial){
+    if (polynomial.n == 0){
+        os << 0;
+        return os;
+    }
     for (int i = polynomial.n; i >= 0; --i) {
-        if (polynomial.n == 0){
-            os << 0;
-            return os;
-        }
         if (polynomial.coef[i] == 0){
             continue;
         }
@@ -114,7 +114,7 @@ Polynomial Polynomial::operator*(const Polynomial &rhs) const {
         }
     }
     Polynomial tmp = Polynomial(mindeg, maxdeg, newcoef);
-    tmp.Format(tmp);
+    tmp.normalize();
     return tmp;
 }
 
@@ -158,7 +158,7 @@ Polynomial Polynomial::operator+ (const Polynomial &rhs) const{
     return Polynomial(newmin, newmax, result);
 }
 
-void Polynomial::Format(Polynomial &Poly) {
+void Polynomial::normalize() {
     while (coef[n - 1] == 0 && n != 1) {
         maxpower--;
         n--;
@@ -172,6 +172,7 @@ void Polynomial::Format(Polynomial &Poly) {
         n--;
     }
 }
+
 int & Polynomial::operator[](const int v){
     if (v > maxpower){
         maxpower = v;
@@ -199,7 +200,7 @@ int Polynomial::operator[] (const int v) const{
 float Polynomial::get(float v) const {
     float f = coef[0] * powf(v, minpower);
     float result = f;
-    for (std::size_t i = 1; i < n; i++) {
+    for (int i = 1; i < n; i++) {
         f *= v;
         result += f * coef[i];
     }
@@ -209,8 +210,8 @@ float Polynomial::get(float v) const {
 bool Polynomial::operator==(const Polynomial &rhs) const{
     Polynomial other = rhs;
     Polynomial ths = *this;
-    other.Format(other);
-    ths.Format(ths);
+    other.normalize();
+    ths.normalize();
     if (other.minpower != ths.minpower || other.maxpower != ths.maxpower){
         return false;
     }
@@ -223,6 +224,6 @@ bool Polynomial::operator==(const Polynomial &rhs) const{
 }
 
 bool Polynomial::operator!=(const Polynomial &rhs) const{
-    return !(*this == rhs);
+    return !(rhs == *this);
 }
 
