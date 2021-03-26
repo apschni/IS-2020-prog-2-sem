@@ -2,8 +2,7 @@
 #include "Polynomial.h"
 
 Polynomial::Polynomial(int minpower, int maxpower, int *coef)
-        : coef(coef), minpower(minpower),
-          maxpower(maxpower), n(abs(maxpower - minpower) + 1) {}
+        : coef(coef), minpower(minpower), maxpower(maxpower), n(abs(maxpower - minpower) + 1) {}
 
 Polynomial::Polynomial(const Polynomial &other)
         : minpower(other.minpower), maxpower(other.maxpower),
@@ -59,7 +58,7 @@ std::ostream &operator<<(std::ostream &os, const Polynomial &polynomial) {
         os << 0;
         return os;
     }
-    for (int i = polynomial.n; i >= 0; --i) {
+    for (int i = polynomial.n - 1; i >= 0; --i) {
         if (polynomial.coef[i] == 0) {
             continue;
         }
@@ -79,8 +78,9 @@ std::ostream &operator<<(std::ostream &os, const Polynomial &polynomial) {
                 if (polynomial.minpower + i == 1) {
                     os << "x";
                     continue;
+                } else {
+                    os << "x^" << polynomial.minpower + i;
                 }
-                os << "x^" << polynomial.minpower + i;
             } else {
                 if (polynomial.minpower + i == 1) {
                     os << abs(polynomial.coef[i]) << "x";
@@ -172,6 +172,7 @@ void Polynomial::normalize() {
 }
 
 int &Polynomial::operator[](const int v) {
+    int tmp = n;
     if (v > maxpower) {
         maxpower = v;
     }
@@ -181,7 +182,7 @@ int &Polynomial::operator[](const int v) {
     n = abs(maxpower - minpower) + 1;
     int *newcoef = new int[n]();
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < tmp; i++)
         newcoef[i] = coef[i];
 
     *this = Polynomial(minpower, maxpower, newcoef);

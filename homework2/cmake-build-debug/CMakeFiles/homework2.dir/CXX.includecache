@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/artem/CLionProjects/IS-2020-prog-2-sem/homework2/Polynomial.cpp
-cmath
--
-Polynomial.h
-/home/artem/CLionProjects/IS-2020-prog-2-sem/homework2/Polynomial.h
-
 /home/artem/CLionProjects/IS-2020-prog-2-sem/homework2/Polynomial.h
 ostream
 -
+
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework2/main.cpp
+iostream
+-
+sstream
+-
+assert.h
+-
+Polynomial.h
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework2/Polynomial.h
 

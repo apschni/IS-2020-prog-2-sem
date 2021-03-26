@@ -20,20 +20,32 @@ public:
     Polynomial &operator=(const Polynomial &);
 
     bool operator==(const Polynomial &) const;
+
     bool operator!=(const Polynomial &) const;
 
     Polynomial operator-(const Polynomial &) const;
+
     Polynomial operator-() const;
+
     Polynomial operator+(const Polynomial &) const;
+
     Polynomial operator-=(const Polynomial &) const;
+
     Polynomial operator+=(const Polynomial &) const;
+
     Polynomial operator*(const Polynomial &) const;
+
     friend Polynomial operator*(int, const Polynomial &);
+
     friend Polynomial operator*(const Polynomial &, int);
+
     Polynomial operator/(int) const;
+
     void normalize();
+
     int operator[](int) const;
-    int & operator[](int);
+
+    int &operator[](int);
 
     float get(float) const;
 
