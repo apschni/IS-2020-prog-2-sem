@@ -118,8 +118,8 @@ Polynomial Polynomial::operator*(const Polynomial &rhs) const {
 
 Polynomial operator*(const Polynomial &rhs, const int v) {
     int *a = new int[rhs.n];
-    for (auto coef_ : rhs.coef) {
-        coef_ *= v;
+    for (int i = 0; i < rhs.n; i++) {
+        a[i] = v * rhs[i];
     }
     return Polynomial(rhs.minpower, rhs.maxpower, a);
 }
