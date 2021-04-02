@@ -2,7 +2,7 @@
 #include "Polynomial.h"
 
 Polynomial::Polynomial(int minpower, int maxpower, int *coef)
-        : coef(coef), minpower(minpower), maxpower(maxpower), n(abs(maxpower - minpower) + 1) {}
+        : minpower(minpower), maxpower(maxpower), n(abs(maxpower - minpower) + 1), coef(coef) {}
 
 Polynomial::Polynomial(const Polynomial &other)
         : minpower(other.minpower), maxpower(other.maxpower),
@@ -118,8 +118,8 @@ Polynomial Polynomial::operator*(const Polynomial &rhs) const {
 
 Polynomial operator*(const Polynomial &rhs, const int v) {
     int *a = new int[rhs.n];
-    for (int i = 0; i < rhs.n; i++) {
-        a[i] = v * rhs[i];
+    for (auto coef_ : rhs.coef) {
+        coef_ *= v;
     }
     return Polynomial(rhs.minpower, rhs.maxpower, a);
 }
