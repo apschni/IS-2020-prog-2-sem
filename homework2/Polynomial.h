@@ -29,6 +29,7 @@ public:
 
     Polynomial operator+(const Polynomial &) const;
 
+    //todo $= should return this(Polynomial&)
     Polynomial operator-=(const Polynomial &) const;
 
     Polynomial operator+=(const Polynomial &) const;

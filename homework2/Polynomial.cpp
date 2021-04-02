@@ -1,6 +1,7 @@
 #include <cmath>
 #include "Polynomial.h"
 
+//todo int* should copy
 Polynomial::Polynomial(int minpower, int maxpower, int *coef)
         : minpower(minpower), maxpower(maxpower), n(abs(maxpower - minpower) + 1), coef(coef) {}
 
@@ -49,6 +50,7 @@ Polynomial Polynomial::operator-=(const Polynomial &rhs) const {
     return *this - rhs;
 }
 
+//todo + from += (not opposite way)
 Polynomial Polynomial::operator+=(const Polynomial &rhs) const {
     return *this + rhs;
 }
@@ -97,6 +99,7 @@ std::ostream &operator<<(std::ostream &os, const Polynomial &polynomial) {
 Polynomial Polynomial::operator*(const Polynomial &rhs) const {
     int maxdeg = rhs.maxpower + maxpower;
     int mindeg = rhs.minpower + minpower;
+    //todo there will be memory leak
     int *newcoef = new int[abs(maxdeg - mindeg) + 1]();
     if (mindeg == rhs.minpower) {
         for (int i = 0; i < rhs.n; i++) {
@@ -184,6 +187,7 @@ int &Polynomial::operator[](const int v) {
         minpower_ = v;
     }
     int newn = abs(maxpower_ - minpower_) + 1;
+    //todo memory-leak (you dont need ())
     int *newcoef = new int[newn]();
 
     for (int i = minpower_; i <= maxpower_; ++i) {
