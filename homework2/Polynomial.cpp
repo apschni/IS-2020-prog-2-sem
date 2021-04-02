@@ -172,21 +172,29 @@ void Polynomial::normalize() {
 }
 
 int &Polynomial::operator[](const int v) {
-    int tmp = n;
+    if (v >= minpower && v <= maxpower){
+        return coef[v - minpower];
+    }
+    int minpower_ = minpower;
+    int maxpower_ = maxpower;
     if (v > maxpower) {
-        maxpower = v;
+        maxpower_ = v;
     }
     if (v < minpower) {
-        minpower = v;
+        minpower_ = v;
     }
-    n = abs(maxpower - minpower) + 1;
-    int *newcoef = new int[n]();
+    int newn = abs(maxpower_ - minpower_) + 1;
+    int *newcoef = new int[newn]();
 
-    for (int i = 0; i < tmp; i++)
-        newcoef[i] = coef[i];
-
-    *this = Polynomial(minpower, maxpower, newcoef);
-
+    for (int i = minpower_; i <= maxpower_; ++i) {
+        if (v >= minpower && i <= maxpower){
+            newcoef[i - minpower_] = coef[i - minpower];
+        }
+    }
+    minpower = minpower_;
+    maxpower = maxpower_;
+    coef = newcoef;
+    n = newn;
     return coef[v - minpower];
 }
 
