@@ -5,13 +5,16 @@
 #include <ostream>
 
 class Polynomial {
-public:
-    int minpower;
-    int maxpower;
-    int n;
+private:
+    int minpower = 0;
+    int maxpower = 0;
+    int n = abs(maxpower - minpower) + 1;
     int *coef;
+
+    static Polynomial &sign(Polynomial &, const Polynomial &, int );
+    void normalize();
 public:
-    Polynomial(int, int, int *);
+    Polynomial(int, int, const int *);
 
     Polynomial(const Polynomial &);
 
@@ -28,10 +31,16 @@ public:
     Polynomial operator-() const;
 
     Polynomial operator+(const Polynomial &) const;
+    //fixed $= should return this(Polynomial&)
+    Polynomial &operator-=(const Polynomial &);
 
-    Polynomial operator-=(const Polynomial &) const;
+    Polynomial &operator+=(const Polynomial &);
 
-    Polynomial operator+=(const Polynomial &) const;
+    Polynomial &operator *= (const Polynomial &);
+
+    Polynomial &operator *= (int);
+
+    Polynomial &operator /= (int);
 
     Polynomial operator*(const Polynomial &) const;
 
@@ -40,8 +49,6 @@ public:
     friend Polynomial operator*(const Polynomial &, int);
 
     Polynomial operator/(int) const;
-
-    void normalize();
 
     int operator[](int) const;
 

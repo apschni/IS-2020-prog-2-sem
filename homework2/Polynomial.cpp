@@ -1,60 +1,118 @@
 #include <cmath>
 #include "Polynomial.h"
 
-Polynomial::Polynomial(int minpower, int maxpower, int *coef)
-        : minpower(minpower), maxpower(maxpower), n(abs(maxpower - minpower) + 1), coef(coef) {}
+//fixed int* should copy
+Polynomial::Polynomial(int minpower, int maxpower, const int *coef_)
+        : minpower(minpower), maxpower(maxpower), n(abs(maxpower - minpower) + 1) {
+    this->coef = new int[n];
+    for (int i = 0; i < n; i++) {
+        this->coef[i] = coef_[i];
+    }
+}
 
-Polynomial::Polynomial(const Polynomial &other)
-        : minpower(other.minpower), maxpower(other.maxpower),
-          n(abs(other.maxpower - other.minpower) + 1), coef(other.coef) {}
+Polynomial::Polynomial(const Polynomial &other) : minpower(other.minpower), maxpower(other.maxpower), n(abs(other.maxpower - other.minpower) + 1) {
+    this->coef = new int[other.n];
+    for (int i = 0; i < other.n; i++) {
+        this->coef[i] = other.coef[i];
+    }
+}
 
-Polynomial::Polynomial() : minpower(0), maxpower(0), n(0), coef(new int[1]()) {}
+Polynomial::Polynomial() : minpower(0), maxpower(0), n(1), coef(new int[1]()) {}
 
 Polynomial &Polynomial::operator=(const Polynomial &rhs) {
     if (this == &rhs) {
         return *this;
     }
-    minpower = rhs.minpower;
-    maxpower = rhs.maxpower;
-    n = rhs.n;
-    coef = rhs.coef;
+    delete[] this->coef;
+    this->n = rhs.n;
+    this->maxpower = rhs.maxpower;
+    this->minpower = rhs.minpower;
+    this->coef = new int[rhs.n];
+    for (int i = 0; i < rhs.n; i++) {
+        this->coef[i] = rhs.coef[i];
+    }
     return *this;
 }
 
 Polynomial Polynomial::operator-(const Polynomial &rhs) const {
-    Polynomial polynomial = Polynomial(rhs.minpower, rhs.maxpower, coef);
-    for (int i = 0; i < polynomial.n; ++i) {
-        polynomial.coef[i] *= -1;
-    }
-    return *this + polynomial;
+    Polynomial poly = *this;
+    poly -= rhs;
+    return poly;
 }
 
 Polynomial Polynomial::operator-() const {
-    int *p = new int[n];
+    Polynomial poly = *this;
     for (int i = 0; i < n; ++i) {
-        p[i] = -1 * coef[i];
+        poly.coef[i] = -1 * coef[i];
     }
-    return Polynomial(minpower, maxpower, p);
+    return poly;
 }
 
 Polynomial Polynomial::operator/(const int x) const {
-    int *a = new int[n];
+    Polynomial poly = *this;
     for (int i = 0; i < n; ++i) {
-        a[i] = coef[i] / x;
+        poly.coef[i] = coef[i] / x;
     }
-    return Polynomial(minpower, maxpower, a);
+    return poly;
 }
 
-Polynomial Polynomial::operator-=(const Polynomial &rhs) const {
-    return *this - rhs;
+Polynomial &Polynomial::operator-=(const Polynomial &rhs) {
+    *this = sign(*this, rhs, -1);
+    return *this;
 }
 
-Polynomial Polynomial::operator+=(const Polynomial &rhs) const {
-    return *this + rhs;
+//fixed + from += (not opposite way)
+Polynomial &Polynomial::operator+=(const Polynomial &rhs) {
+    *this = sign(*this, rhs, 1);
+    return *this;
+}
+
+Polynomial &Polynomial::sign(Polynomial &lhs, const Polynomial &rhs, int prefix) {
+    int maxdegree_ = std::max(rhs.maxpower, lhs.maxpower);
+    int mindegree_ = std::min(rhs.minpower, lhs.minpower);
+
+    int *newcoef = new int[abs(maxdegree_ - mindegree_) + 1]();
+    int newmin = abs(rhs.minpower - lhs.minpower);
+
+    if (mindegree_ == rhs.minpower) {
+        for (int i = 0; i < rhs.n; i++) {
+            newcoef[i] += prefix * rhs.coef[i];
+        }
+
+        for (int i = newmin; i < lhs.n + newmin; i++) {
+            newcoef[i] += prefix * lhs.coef[i - newmin];
+        }
+
+    } else {
+        for (int i = 0; i < lhs.n; i++) {
+            newcoef[i] += prefix * lhs.coef[i];
+        }
+        for (int i = newmin; i < rhs.n + newmin; i++) {
+            newcoef[i] += prefix * rhs.coef[i - newmin];
+        }
+    }
+    lhs = Polynomial(mindegree_, maxdegree_, newcoef);
+    delete[] newcoef;
+    return lhs;
+}
+
+Polynomial &Polynomial::operator*=(const Polynomial &rhs) {
+    *this = (*this) * rhs;
+    return *this;
+}
+
+Polynomial &Polynomial::operator*=(const int i) {
+    *this = (*this) * i;
+    return *this;
+}
+
+Polynomial &Polynomial::operator/=(const int i) {
+    *this = (*this) / i;
+    return *this;
 }
 
 std::ostream &operator<<(std::ostream &os, const Polynomial &polynomial) {
-    if (polynomial.n == 0) {
+    if (polynomial.n == 1) {
         os << 0;
         return os;
     }
@@ -93,10 +151,10 @@ std::ostream &operator<<(std::ostream &os, const Polynomial &polynomial) {
     return os;
 }
 
-
 Polynomial Polynomial::operator*(const Polynomial &rhs) const {
     int maxdeg = rhs.maxpower + maxpower;
     int mindeg = rhs.minpower + minpower;
+    //fixed there will be memory leak
     int *newcoef = new int[abs(maxdeg - mindeg) + 1]();
     if (mindeg == rhs.minpower) {
         for (int i = 0; i < rhs.n; i++) {
@@ -113,47 +171,30 @@ Polynomial Polynomial::operator*(const Polynomial &rhs) const {
     }
     Polynomial tmp = Polynomial(mindeg, maxdeg, newcoef);
     tmp.normalize();
+    delete[] newcoef;
     return tmp;
 }
 
 Polynomial operator*(const Polynomial &rhs, const int v) {
-    int *a = new int[rhs.n];
+    Polynomial poly = rhs;
     for (int i = 0; i < rhs.n; i++) {
-        a[i] = v * rhs[i];
+        poly.coef[i] = v * rhs[i];
     }
-    return Polynomial(rhs.minpower, rhs.maxpower, a);
+    return poly;
 }
 
 Polynomial operator*(const int v, const Polynomial &rhs) {
-    int *a = new int[rhs.n];
+    Polynomial poly = rhs;
     for (int i = 0; i < rhs.n; i++) {
-        a[i] = v * rhs[i];
+        poly.coef[i] = v * rhs[i];
     }
-    return Polynomial(rhs.minpower, rhs.maxpower, a);
+    return poly;
 }
 
 Polynomial Polynomial::operator+(const Polynomial &rhs) const {
-    int newmax = std::max(rhs.maxpower, maxpower);
-    int newmin = std::min(rhs.minpower, minpower);
-    int *result = new int[abs(newmax - newmin) + 1]();
-    int newn = abs(minpower - rhs.minpower);
-
-    if (newmin == rhs.minpower) {
-        for (int i = 0; i < rhs.n; i++) {
-            result[i] += rhs.coef[i];
-        }
-        for (int i = newn; i < n + newn; i++) {
-            result[i] += coef[i - newn];
-        }
-    } else {
-        for (int i = 0; i < n; i++) {
-            result[i] += coef[i];
-        }
-        for (int i = newn; i < rhs.n + newn; i++) {
-            result[i] += rhs.coef[i - newn];
-        }
-    }
-    return Polynomial(newmin, newmax, result);
+    Polynomial poly = *this;
+    poly += rhs;
+    return poly;
 }
 
 void Polynomial::normalize() {
@@ -172,7 +213,7 @@ void Polynomial::normalize() {
 }
 
 int &Polynomial::operator[](const int v) {
-    if (v >= minpower && v <= maxpower){
+    if (v >= minpower && v <= maxpower) {
         return coef[v - minpower];
     }
     int minpower_ = minpower;
@@ -184,17 +225,16 @@ int &Polynomial::operator[](const int v) {
         minpower_ = v;
     }
     int newn = abs(maxpower_ - minpower_) + 1;
-    int *newcoef = new int[newn]();
+    //fixed memory-leak (you dont need ())
+    int *newcoef = new int[newn];
 
     for (int i = minpower_; i <= maxpower_; ++i) {
-        if (v >= minpower && i <= maxpower){
+        if (v >= minpower && i <= maxpower) {
             newcoef[i - minpower_] = coef[i - minpower];
         }
     }
-    minpower = minpower_;
-    maxpower = maxpower_;
-    coef = newcoef;
-    n = newn;
+    *this = Polynomial(minpower_, maxpower_, newcoef);
+    delete[] newcoef;
     return coef[v - minpower];
 }
 
@@ -219,6 +259,7 @@ bool Polynomial::operator==(const Polynomial &rhs) const {
     Polynomial ths = *this;
     other.normalize();
     ths.normalize();
+
     if (other.minpower != ths.minpower || other.maxpower != ths.maxpower) {
         return false;
     }
