@@ -1,0 +1,12 @@
+Pulling https://github.com/apschni/IS-2020-prog-2-sem/homework2
+Pull finished
+It's compiled
+Assertion failed: c.get(4) == 3053.25, file main.cpp, line 42
+
+main.cpp: In function 'void PolynomialOperators()':
+main.cpp:27:16: warning: variable 'f' set but not used [-Wunused-but-set-variable]
+   27 |     const auto f = Polynomial(-2, 2, new int[5]{1, 0, 0, 0, 1});
+      |                ^
+
+
+
