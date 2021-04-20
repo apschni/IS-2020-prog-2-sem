@@ -10,7 +10,8 @@ Polynomial::Polynomial(int minpower, int maxpower, const int *coef_)
     }
 }
 
-Polynomial::Polynomial(const Polynomial &other) : minpower(other.minpower), maxpower(other.maxpower), n(abs(other.maxpower - other.minpower) + 1) {
+Polynomial::Polynomial(const Polynomial &other)
+: minpower(other.minpower), maxpower(other.maxpower), n(abs(other.maxpower - other.minpower) + 1) {
     this->coef = new int[other.n];
     for (int i = 0; i < other.n; i++) {
         this->coef[i] = other.coef[i];
@@ -213,29 +214,19 @@ void Polynomial::normalize() {
 }
 
 int &Polynomial::operator[](const int v) {
-    if (v >= minpower && v <= maxpower) {
-        return coef[v - minpower];
-    }
-    int minpower_ = minpower;
-    int maxpower_ = maxpower;
-    if (v > maxpower) {
-        maxpower_ = v;
-    }
-    if (v < minpower) {
-        minpower_ = v;
-    }
-    int newn = abs(maxpower_ - minpower_) + 1;
-    //fixed memory-leak (you dont need ())
-    int *newcoef = new int[newn];
-
-    for (int i = minpower_; i <= maxpower_; ++i) {
-        if (v >= minpower && i <= maxpower) {
-            newcoef[i - minpower_] = coef[i - minpower];
-        }
-    }
-    *this = Polynomial(minpower_, maxpower_, newcoef);
-    delete[] newcoef;
-    return coef[v - minpower];
+    int tmp = this->n;
+    if (v > this->maxpower)
+        this->maxpower = v;
+    if (v < this->minpower)
+        this->minpower = v;
+    this->n = abs(maxpower - minpower) + 1;
+    int *newcoef = new int[this->n]();
+    for (int i = 0; i < tmp; i++)
+        newcoef[i] = this->coef[i];
+    Polynomial temp = Polynomial(minpower, maxpower, newcoef);
+    *this = temp;
+    delete [] newcoef;
+    return this->coef[v - this->minpower];
 }
 
 int Polynomial::operator[](const int v) const {
@@ -244,7 +235,8 @@ int Polynomial::operator[](const int v) const {
     return coef[v + minpower];
 }
 
-float Polynomial::get(float v) const {
+float Polynomial::get(float v) {
+    normalize();
     float f = coef[0] * powf(v, minpower);
     float result = f;
     for (int i = 1; i < n; i++) {

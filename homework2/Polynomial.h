@@ -9,8 +9,7 @@ private:
     int minpower = 0;
     int maxpower = 0;
     int n = abs(maxpower - minpower) + 1;
-    int *coef;
-
+    int *coef = new int[n];
     static Polynomial &sign(Polynomial &, const Polynomial &, int );
     void normalize();
 public:
@@ -54,7 +53,7 @@ public:
 
     int &operator[](int);
 
-    float get(float) const;
+    float get(float);
 
     friend std::ostream &operator<<(std::ostream &, const Polynomial &);
 };
