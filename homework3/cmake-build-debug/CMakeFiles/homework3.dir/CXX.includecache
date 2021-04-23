@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework3/main.cpp
+pugixml.hpp
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework3/pugixml.hpp
+iostream
+-
+cmath
+-
+vector
+-
+sstream
+-
+algorithm
+-
+
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework3/pugiconfig.hpp
+
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework3/pugixml.hpp
+pugiconfig.hpp
+/home/artem/CLionProjects/IS-2020-prog-2-sem/homework3/pugiconfig.hpp
+stddef.h
+-
+exception
+-
+iterator
+-
+iosfwd
+-
+string
+-
+
