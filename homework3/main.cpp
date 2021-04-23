@@ -16,9 +16,11 @@ public:
     vector<double> coords;
 };
 
+//todo const
 string maximumRoute(int type, vector<Station> &all_stations, vector<string> &vehicle_types, int number_of_stations) {
     vector<string> routes;
     vector<int> routes_length;
+    //todo use range-based for
     for (int i = 0; i < number_of_stations; i++) {
         for (int j = 0; j < all_stations[i].routes.size(); j++) {
             if (std::find(routes.begin(), routes.end(), all_stations[i].routes[j]) ==
@@ -45,6 +47,7 @@ string maximumRoute(int type, vector<Station> &all_stations, vector<string> &veh
         }
     }
 
+    //todo max if a function
     int max = routes_length[0];
     for (int i : routes_length) {
         if (i > max) {
