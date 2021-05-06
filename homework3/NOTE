@@ -1,0 +1,50 @@
+Pulling https://github.com/apschni/IS-2020-prog-2-sem/homework3
+Pull finished
+It's compiled
+Маршрут автобуса с наибольшим числом остановок -------->  60
+Маршрут троллейбуса с наибольшим числом остановок --------> 53
+Маршрут трамвая с наибольшим числом остановок --------> 87
+Маршрут автобуса с наибольшей длиной --------> 2
+Маршрут троллейбуса с наибольшей длиной --------> 1
+Маршрут трамвая с наибольшей длиной --------> 2
+Улица с наибольшим количеством остановок --------> Таллинское ш.
+main.cpp: In function 'std::string maximumRoute(int, std::vector<Station>&, std::vector<std::__cxx11::basic_string<char> >&, int)':
+main.cpp:23:27: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'unsigned int'} [-Wsign-compare]
+   23 |         for (int j = 0; j < all_stations[i].routes.size(); j++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.cpp:33:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'unsigned int'} [-Wsign-compare]
+   33 |     for (int i = 0; i < routes.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~
+main.cpp:36:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'unsigned int'} [-Wsign-compare]
+   36 |     for (int i = 0; i < routes.size(); i++) {
+      |                     ~~^~~~~~~~~~~~~~~
+main.cpp: In function 'double maximumRouteLenght(int, std::vector<Station>&, std::vector<std::__cxx11::basic_string<char> >&, int)':
+main.cpp:66:27: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'unsigned int'} [-Wsign-compare]
+   66 |         for (int j = 0; j < all_stations[i].routes.size(); j++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.cpp:75:27: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'unsigned int'} [-Wsign-compare]
+   75 |         for (int j = 0; j < routes.size(); j++) {
+      |                         ~~^~~~~~~~~~~~~~~
+main.cpp:87:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'unsigned int'} [-Wsign-compare]
+   87 |     for (int i = 0; i < routes.size(); i++) {
+      |                     ~~^~~~~~~~~~~~~~~
+main.cpp:89:27: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<double>::size_type' {aka 'unsigned int'} [-Wsign-compare]
+   89 |         for (int j = 0; j < stations[i].size() - 1; j++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~
+main.cpp: In function 'std::string maximumStreetRoutes(std::vector<Station>&, int)':
+main.cpp:118:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'unsigned int'} [-Wsign-compare]
+  118 |     for (int i = 0; i < streets.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~
+main.cpp:121:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'unsigned int'} [-Wsign-compare]
+  121 |     for (int i = 0; i < streets.size(); i++) {
+      |                     ~~^~~~~~~~~~~~~~~~
+main.cpp:132:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<int>::size_type' {aka 'unsigned int'} [-Wsign-compare]
+  132 |     for (int i = 0; i < street_length.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~
+main.cpp: In function 'int main()':
+main.cpp:159:27: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'unsigned int'} [-Wsign-compare]
+  159 |         for (int i = 0; i < tmp_str.size(); i++)
+      |                         ~~^~~~~~~~~~~~~~~~
+
+
+
