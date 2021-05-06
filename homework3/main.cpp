@@ -16,15 +16,17 @@ public:
     vector<double> coords;
 };
 
-string maximumRoute(int type, vector<Station> &all_stations, vector<string> &vehicle_types, int number_of_stations) {
+//fixed const
+string maximumRoute(const int type, const vector<Station> &all_stations, const vector<string> &vehicle_types, const int number_of_stations) {
     vector<string> routes;
     vector<int> routes_length;
-    for (int i = 0; i < number_of_stations; i++) {
-        for (int j = 0; j < all_stations[i].routes.size(); j++) {
-            if (std::find(routes.begin(), routes.end(), all_stations[i].routes[j]) ==
-                routes.end()) { //для каждой остановки с данным типом транспорта добавляем все ее маршруты
-                if (all_stations[i].type_of_vehicle == vehicle_types[type])
-                    routes.push_back(all_stations[i].routes[j]);
+    //fixed use range-based for
+    for (auto &i : all_stations) {
+        for (auto &j : i.routes) {
+            if (std::find(routes.begin(), routes.end(), j) ==
+                routes.end()) {  //для каждой остановки с данным типом транспорта добавляем все ее маршруты
+                if (i.type_of_vehicle == vehicle_types[type])
+                    routes.push_back(j);
             }
         }
     }
@@ -45,29 +47,29 @@ string maximumRoute(int type, vector<Station> &all_stations, vector<string> &veh
         }
     }
 
-    int max = routes_length[0];
+    //fixed max if a function
+    int maxroute = routes_length[0];
     for (int i : routes_length) {
-        if (i > max) {
-            max = i;
-            break;
+        if (i > maxroute) {
+            maxroute = i;
         }
     }
-    return std::to_string(max);
+    return std::to_string(maxroute);
 
 }
 
 
 double
-maximumRouteLenght(int type, vector<Station> &all_stations, vector<string> &vehicle_types, int number_of_stations) {
+maximumRouteLenght(const int type, const vector<Station> &all_stations, const vector<string> &vehicle_types, const int number_of_stations) {
     vector<string> routes;
     vector<vector<double>> stations;
     vector<double> routes_length;
-    for (int i = 0; i < number_of_stations; i++) {
-        for (int j = 0; j < all_stations[i].routes.size(); j++) {
-            if (std::find(routes.begin(), routes.end(), all_stations[i].routes[j]) ==
+    for (auto &i : all_stations) {
+        for (auto &j : i.routes) {
+            if (std::find(routes.begin(), routes.end(), j) ==
                 routes.end()) {  //для каждой остановки с данным типом транспорта добавляем все ее маршруты
-                if (all_stations[i].type_of_vehicle == vehicle_types[type])
-                    routes.push_back(all_stations[i].routes[j]);
+                if (i.type_of_vehicle == vehicle_types[type])
+                    routes.push_back(j);
             }
         }
     }
@@ -94,22 +96,21 @@ maximumRouteLenght(int type, vector<Station> &all_stations, vector<string> &vehi
         routes_length.push_back(length);
     }
 
-    int max = routes_length[0];
+    int maxroute = routes_length[0];
     for (int i : routes_length) {
-        if (i > max) {
-            max = i;
-            break;
+        if (i > maxroute) {
+            maxroute = i;
         }
     }
-    return max;
+    return maxroute;
 }
 
 
-string maximumStreetRoutes(vector<Station> &all_stations, int number_of_stations) {
+string maximumStreetRoutes(const vector<Station> &all_stations, const int number_of_stations) {
     vector<string> streets;
     vector<int> street_length;
-    for (int i = 0; i < number_of_stations; i++) {
-        for (auto &j : all_stations[i].location) {
+    for (auto &i : all_stations) {
+        for (auto &j : i.location) {
             if ((std::find(streets.begin(), streets.end(), j) == streets.end())) //для каждой остановки добавляем улицы
                 streets.push_back(j);
         }
@@ -119,19 +120,19 @@ string maximumStreetRoutes(vector<Station> &all_stations, int number_of_stations
         street_length.push_back(0);
 
     for (int i = 0; i < streets.size(); i++) {
-        for (int j = 0; j < number_of_stations; j++) {
-            if (std::find(all_stations[j].location.begin(), all_stations[j].location.end(), streets[i]) !=
+        for (auto &j : all_stations) {
+            if (std::find(j.location.begin(), j.location.end(), streets[i]) !=
                 //для каждой улицы считаем кол-во остановок на ней
-                all_stations[j].location.end())
+                j.location.end())
                 street_length[i] += 1;
         }
     }
 
-    int max = street_length[0];
+    int maxroute = street_length[0];
     int j = 0;
     for (int i = 0; i < street_length.size(); ++i) {
-        if (street_length[i] > max) {
-            max = street_length[i];
+        if (street_length[i] > maxroute) {
+            maxroute = street_length[i];
             j = i;
         }
     }
